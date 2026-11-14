@@ -1,0 +1,61 @@
+:root{
+  --ink:#0d1f16; --panel:#12291d; --panel2:#0a1a12; --line:#234a34;
+  --green:#7ee2a0; --green2:#3fbf72; --amber:#f5c04e; --red:#ff7a6e;
+  --text:#e8f5ec; --muted:#9dbfa9; --chip:#1c3a2a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--text);
+  font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.top{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:flex-end;
+  padding:20px 24px 12px;border-bottom:2px solid var(--line);
+  background:radial-gradient(600px 120px at 20% 0%,#1d4a2e 0%,transparent 70%)}
+.brand{display:flex;gap:12px;align-items:center}
+.shell{font-size:40px;line-height:1}
+h1{margin:0;font-size:28px;letter-spacing:.5px;color:var(--green)}
+.tag{margin:2px 0 0;color:var(--muted);font-style:italic}
+.snap{margin:0;color:var(--muted);font-size:13px;max-width:420px;text-align:right}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;padding:14px 24px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-size:20px;color:var(--green)}
+.stat span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end;padding:4px 24px 14px}
+.controls label{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.controls input,.controls select{background:var(--panel2);color:var(--text);
+  border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit}
+.controls input[type=search]{min-width:220px}
+.check{flex-direction:row!important;align-items:center;gap:6px!important;padding-bottom:8px}
+.count{margin-left:auto;color:var(--muted);font-size:13px;padding-bottom:8px}
+main{padding:0 24px}
+table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:10px;overflow:hidden}
+th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--panel2);color:var(--green);font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:#1a3a28}
+tbody tr.sel{background:#1e4a30;outline:2px solid var(--green2)}
+td.name b{color:#fff}
+td.name .slug{color:var(--muted);font-size:12px}
+.pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;background:var(--chip);color:var(--green)}
+.pill.watch{background:#4a3605;color:var(--amber)}
+.pill.early{background:#123a4a;color:#8fd4ef}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--muted)}
+.hint{color:var(--muted);font-size:13px}
+.detail{margin:18px 24px;padding:18px;background:var(--panel);border:1px solid var(--green2);border-radius:12px}
+.detail:empty{display:none}
+.detail h2{margin:0 0 4px;color:#fff}
+.detail .sub{color:var(--muted);margin:0 0 12px}
+.detail .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:12px}
+.detail .cell{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.detail .cell b{display:block;font-size:17px;color:var(--green)}
+.detail .cell span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.detail ol{margin:8px 0 0;padding-left:20px}
+.detail li{margin:6px 0}
+.formula{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;
+  background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;overflow-x:auto}
+.live,.method{margin:18px 24px}
+.live h2,.method h2{color:var(--green);margin:0 0 6px}
+.live p,.method p{color:var(--muted);max-width:900px}
+.live tbody tr{cursor:default}
+.note{border-left:3px solid var(--amber);padding-left:10px}
+footer{padding:16px 24px 24px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+@media(max-width:760px){.snap{text-align:left}th:nth-child(4),td:nth-child(4){display:none}}

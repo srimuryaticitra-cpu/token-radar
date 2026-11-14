@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tortoise Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="shell" aria-hidden="true">◉</span><div>
+    <h1>Tortoise Radar</h1>
+    <p class="tag">Slow is smooth. Smooth is early. — the pre-token launch radar</p>
+  </div></div>
+  <p class="snap" id="snapLine"></p>
+</header>
+
+<section class="stats" id="stats" aria-label="Snapshot summary"></section>
+
+<section class="controls" aria-label="Filters">
+  <label>Search <input id="q" type="search" placeholder="protocol name or slug" autocomplete="off"></label>
+  <label>Category <select id="cat"><option value="">All categories</option></select></label>
+  <label>Chain <select id="chain"><option value="">All chains</option></select></label>
+  <label>Sort <select id="sort">
+    <option value="value">Implied value ↓</option>
+    <option value="tvl">TVL ↓</option>
+    <option value="growth">7-day growth ↓</option>
+    <option value="age">Age ↓</option>
+    <option value="name">Name A–Z</option>
+  </select></label>
+  <label class="check"><input id="watchOnly" type="checkbox"> Watchlist only</label>
+  <span class="count" id="count"></span>
+</section>
+
+<section id="detail" class="detail" aria-live="polite"></section>
+
+<main>
+  <table id="board">
+    <thead><tr>
+      <th>#</th><th>Protocol</th><th>Category</th><th>Chains</th>
+      <th class="num">TVL</th><th class="num">7d</th><th class="num">Age</th>
+      <th class="num">Implied value</th><th>Signal</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p class="hint">Click a row for its detail view and farm plan. Every row records no token — never that it has none.</p>
+</main>
+
+<section class="live">
+  <h2>Already trading — not ranked</h2>
+  <p>These protocols already have a token, so the market prices them and the radar does not. They are the comps the board is priced against.</p>
+  <table id="liveTable">
+    <thead><tr><th>Protocol</th><th>Category</th><th class="num">TVL</th><th class="num">Market cap</th><th class="num">7d</th></tr></thead>
+    <tbody id="liveRows"></tbody>
+  </table>
+</section>
+
+<section class="method">
+  <h2>How the tortoise prices a launch</h2>
+  <p id="methodText"></p>
+  <p class="note">Implied value is this entry's own claim from the snapshot's figures, never make.fun's and never a promise a token launches. A protocol that records no token may still have one its DefiLlama record does not carry. Farm steps cost real money and real time — never pay anyone to claim.</p>
+</section>
+
+<footer><p>Data: DefiLlama protocols snapshot, sealed 2026-11-14. Model: tortoise-comps-1. Built by an AI agent for the make.fun token launch radar bounty.</p></footer>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
